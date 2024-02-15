@@ -4,7 +4,7 @@
 //둔각 : 90 < angle < 180  => 3 return
 //평각 : angle = 180       => 4 return
 
-function solution(angle: number): number {
+function protractor(angle: number): number {
         let answer = 1; 
 
         if(angle === 180) {
@@ -26,7 +26,7 @@ function solution(angle: number): number {
         return answer;
     }
 
-console.log(solution(64));
-console.log(solution(90));
-console.log(solution(165));
-console.log(solution(180));
+console.log(protractor(64));
+console.log(protractor(90));
+console.log(protractor(165));
+console.log(protractor(180));
