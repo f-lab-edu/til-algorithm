@@ -4,9 +4,8 @@
 function yearOfBirth(age: number): number {
     const THIS_YEAR = 2022;
     const ONE_YEAR = 1;
-    let answer = THIS_YEAR - age + ONE_YEAR;
 
-    return answer;
+    return THIS_YEAR - age + ONE_YEAR;;
 }
 
 console.log(yearOfBirth(40));

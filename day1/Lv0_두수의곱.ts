@@ -1,7 +1,6 @@
-function multiply(num1: number, num2: number): number {
-    let answer = num1 * num2;
+function multiply(num1: number, num2: number): number { 
 
-    return answer;
+    return num1 * num2;
 }
 
 console.log(multiply(2, 6));

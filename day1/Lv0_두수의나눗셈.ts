@@ -2,9 +2,8 @@
 
 function division(num1: number, num2: number): number {
     let divide = num1 / num2;
-    let answer = Math.trunc(divide * 1000);
 
-    return answer;
+    return Math.trunc(divide * 1000);
 }
 
 console.log(division(3,2));

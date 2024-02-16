@@ -1,13 +1,7 @@
 function compare(num1: number, num2: number): number {
-    let answer = -1;
+    if(num1 === num2)  return 1;
 
-    if(num1 === num2) {
-        answer = 1;
-
-        return answer;
-    }
-
-    return answer;
+    return -1;
 }
 
 console.log(compare(2,3));

@@ -1,7 +1,6 @@
 function strToInt(s: string): number {
-    let answer = Number(s);
 
-    return answer;
+    return Number(s);
 }
 
 console.log(typeof strToInt('-1234'));

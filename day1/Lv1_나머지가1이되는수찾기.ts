@@ -2,16 +2,14 @@
 
 function remainderIs1(n: number): number {
     let x = 1;
-    let answer: number;
     
     while(x++) {
         if(n % x === 1) {
             return x;
         }
     }
-    answer = x;
 
-    return answer;  
+    return x;  
 }
 
 console.log(remainderIs1(1));

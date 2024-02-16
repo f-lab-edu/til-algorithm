@@ -1,14 +1,11 @@
 function averageOfArray(numbers: number[]): number {
     let average = 0;
-    let answer;
 
     numbers.forEach((num) => {
         average += num;
     })
 
-    answer = average / numbers.length;
-
-    return answer;
+    return average / numbers.length;
 }
 
 console.log(averageOfArray([2, 6, 7, 8, 12]))
