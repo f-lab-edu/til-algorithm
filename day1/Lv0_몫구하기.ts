@@ -1,6 +1,6 @@
 function quotient(num1: number, num2: number): number {
     
-    return Math.trunc(num1 / num2);
+    return Math.floor(num1 / num2);
 }
 
 console.log(quotient(32, 7));
