@@ -3,13 +3,13 @@
 // 머쓱이보다 키 큰 사람 수 return
 
 function NumberOfTallPeople(array: number[], height: number): number {
-    let tallNum = 0;
-    
-    array.forEach((num) => {
-        if(height < num) {
-            tallNum += 1;
-        }
-    })
+  let tallNum = 0;
 
-    return tallNum;
+  array.forEach((num) => {
+    if (height < num) {
+      tallNum += 1;
+    }
+  });
+
+  return tallNum;
 }

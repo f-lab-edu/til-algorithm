@@ -3,15 +3,15 @@
 // => x의 배수 n개를 리턴하면 됨
 
 function multipleArray(x: number, n: number): number[] {
-    let answer: number[] = [];
-    let num = 0;
+  let answer: number[] = [];
+  let num = 0;
 
-    while(answer.length < n) {
-        num += x;
-        answer.push(num);
-    } 
+  while (answer.length < n) {
+    num += x;
+    answer.push(num);
+  }
 
-    return answer;
+  return answer;
 }
 
-console.log(multipleArray(2,5));
+console.log(multipleArray(2, 5));

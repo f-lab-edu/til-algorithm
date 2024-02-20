@@ -5,14 +5,14 @@
 //평각 : angle = 180       => 4 return
 
 function protractor(angle: number): number {
-        if(angle === 180) return 4;
+  if (angle === 180) return 4;
 
-        if(angle > 90 && angle < 180) return 3;
-        
-        if(angle === 90) return 2;
-        
-        return  1;
-    }
+  if (angle > 90 && angle < 180) return 3;
+
+  if (angle === 90) return 2;
+
+  return 1;
+}
 
 console.log(protractor(64));
 console.log(protractor(90));

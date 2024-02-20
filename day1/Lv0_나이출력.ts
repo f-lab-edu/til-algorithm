@@ -2,10 +2,10 @@
 // 현재 년도 = 2022
 
 function yearOfBirth(age: number): number {
-    const THIS_YEAR = 2022;
-    const ONE_YEAR = 1;
+  const THIS_YEAR = 2022;
+  const ONE_YEAR = 1;
 
-    return THIS_YEAR - age + ONE_YEAR;;
+  return THIS_YEAR - age + ONE_YEAR;
 }
 
 console.log(yearOfBirth(40));
