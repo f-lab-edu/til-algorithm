@@ -2,7 +2,7 @@
 // array:반 친구들 키 배열, height: 머쓱이 키
 // 머쓱이보다 키 큰 사람 수 return
 
-function NumberOfTallPeople(array: number[], height: number): number {
+function numberOfTallPeople(array: number[], height: number): number {
   let tallNum = 0;
 
   array.forEach((num) => {
@@ -13,3 +13,5 @@ function NumberOfTallPeople(array: number[], height: number): number {
 
   return tallNum;
 }
+
+console.log(numberOfTallPeople([167, 172, 180], 175));

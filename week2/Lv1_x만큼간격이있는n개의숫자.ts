@@ -3,7 +3,7 @@
 // => x의 배수 n개를 리턴하면 됨
 
 function multipleArray(x: number, n: number): number[] {
-  let answer: number[] = [];
+  const answer: number[] = [];
   let num = 0;
 
   while (answer.length < n) {

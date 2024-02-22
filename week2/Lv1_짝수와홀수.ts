@@ -2,8 +2,7 @@
 // 홀수인 경우 "Odd"를 반환
 
 function evenOdd(num: number): string {
-
-    return num % 2 === 0 ? 'Even' : 'Odd';
+  return num % 2 === 0 ? "Even" : "Odd";
 }
 
 console.log(evenOdd(6));
