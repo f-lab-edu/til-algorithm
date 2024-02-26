@@ -3,13 +3,11 @@
 // 두 수를 곱한 값을 누적하여 더하기
 // 최종적으로 누적된 값이 최소가 되도록 만들기
 
-function minAccNum(A: number[], B: number[]): number{
-    const ascA = A.sort((a,b) => a - b);
-    const descB = B.sort((a,b) => b - a);
+function minAccNum(A: number[], B: number[]): number {
+  const ascA = A.sort((a, b) => a - b);
+  const descB = B.sort((a, b) => b - a);
 
-    const multiplyArray = ascA.map((num, idx) => num * descB[idx]);
-
-    return multiplyArray.reduce((acc, cur) => acc + cur, 0);
+  return ascA.reduce((acc, cur, idx) => acc + cur * descB[idx], 0);
 }
 
 console.log(minAccNum([2, 4, 5], [5, 1, 7]));
