@@ -1,13 +1,21 @@
+// function average(arr: number[]): number {
+//   let numPlus = 0;
+
+//   arr.forEach((num) => {
+//     numPlus += num;
+//   });
+
+//   const answer = numPlus / arr.length;
+
+//   return answer;
+// }
+
+import _ from "lodash";
+
 function average(arr: number[]): number {
-  let numPlus = 0;
+  const numPlus = _.sum(arr);
 
-  arr.forEach((num) => {
-    numPlus += num;
-  });
-
-  const answer = numPlus / arr.length;
-
-  return answer;
+  return numPlus / arr.length;
 }
 
 console.log(average([1, 2, 3, 4, 5]));
