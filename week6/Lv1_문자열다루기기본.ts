@@ -4,7 +4,7 @@
 
 function string(s: string): boolean {
   //return (s.length === 4 || s.length === 6) && Number.isInteger(Number(s));
-  if(s.length === 4 || s.length === 6) {
+  if (s.length === 4 || s.length === 6) {
     return [...s].every((str) => Number.isInteger(Number(str)));
   }
   return false;
