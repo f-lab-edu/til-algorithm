@@ -10,7 +10,8 @@ import _ from "lodash";
 function BinaryConversion(s: string): number[] {
   let count = 0;
   let removeCount = 0;
-  do {
+
+  while (s !== "1") {
     const arr = [...s];
     const removeZero = _.remove(arr, (num) => num === "0");
 
@@ -18,7 +19,7 @@ function BinaryConversion(s: string): number[] {
 
     count++;
     removeCount += removeZero.length;
-  } while (s !== "1");
+  }
 
   return [count, removeCount];
 }
@@ -27,3 +28,4 @@ console.log(BinaryConversion("0111010"));
 console.log(BinaryConversion("110010101001"));
 console.log(BinaryConversion("01110"));
 console.log(BinaryConversion("1111111"));
+console.log(BinaryConversion("1"));
