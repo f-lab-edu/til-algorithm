@@ -13,6 +13,6 @@ rl.on("line", function (line: string) {
   input = Number(line);
   rl.close();
 }).on("close", function () {
-  const n = input % 2 === 0 ? input + " is even" : input + " is odd";
-  console.log(n);
+  const n = input % 2 === 0 ? " is even" : " is odd";
+  console.log(input + n);
 });
