@@ -5,11 +5,7 @@
 function waterMelon(n: number): string {
   const word = "수박";
 
-  if (n % 2 === 0) {
-    return word.repeat(n / 2);
-  }
-
-  return word.repeat(n / 2) + word.at(0);
+  return word.repeat(n / 2) + (n % 2 === 0 ? "" : word.at(0));
 }
 
 console.log(waterMelon(5));
