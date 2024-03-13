@@ -6,15 +6,9 @@ function divisorCalculation(left: number, right: number): number {
   const numArray = _.range(left, right + 1, 1);
 
   const addNum = numArray.reduce((acc, cur) => {
-    let count = 0;
-    for (let i = 1; i <= cur; i++) {
-      if (cur % i === 0) {
-        count++;
-      }
-    }
+    const sqrt = Math.sqrt(cur);
 
-
-    return count % 2 === 0 ? acc + cur : acc - cur;
+    return Number.isInteger(sqrt) ? acc - cur : acc + cur;
   }, 0);
 
   return addNum;
