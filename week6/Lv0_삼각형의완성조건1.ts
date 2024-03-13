@@ -5,11 +5,9 @@
 import _ from "lodash";
 
 function triangle(sides: number[]): number {
-  const max = Math.max(...sides);
-  const other = sides.filter((num) => num !== max);
-  const otherSum = _.sum(other);
+  const sortArray = _.sortBy(sides);
 
-  return max < otherSum ? 1 : 2;
+  return sortArray[2] < sortArray[0] + sortArray[1] ? 1 : 2;
 }
 
 /** 
@@ -20,8 +18,17 @@ function solution(sides) {
 
   return max < otherSum ? 1 : 2;
 }
+
+// 고친 풀이
+function solution(sides) {
+    const sortArray = sides.sort((a,b) => a-b);
+
+    return sortArray[2] < sortArray[0] + sortArray[1] ? 1 : 2;
+
+}
 */
 
 console.log(triangle([1, 2, 3]));
 console.log(triangle([3, 6, 2]));
 console.log(triangle([199, 72, 222]));
+console.log(triangle([3, 6, 6]));
