@@ -3,13 +3,12 @@
 // 예를 들어 s가 "a234"이면 False를 리턴하고 "1234"라면 True를 리턴
 
 function string(s: string): boolean {
-  //return (s.length === 4 || s.length === 6) && Number.isInteger(Number(s));
-  if (s.length === 4 || s.length === 6) {
-    return [...s].every((str) => Number.isInteger(Number(str)));
-  }
-  return false;
+  return /^\d{4}$|^\d{6}$/.test(s);
 }
 
 console.log(string("a234"));
 console.log(string("1234"));
 console.log(string("10e1"));
+console.log(string("12"));
+console.log(string("a2345g"));
+console.log(string("2fs3"));
