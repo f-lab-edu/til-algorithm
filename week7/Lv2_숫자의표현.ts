@@ -7,7 +7,7 @@
 // 15 = 15
 // 자연수 n이 매개변수로 주어질 때, 연속된 자연수들로 n을 표현하는 방법의 수를 return
 
-function solution(n: number): number {
+function oddDivisorCount(n: number): number {
   let count = 0;
   for (let i = 1; i <= n; i++) {
     const modifiedFormula = (2 * n) / i + 1 - i;
@@ -23,7 +23,18 @@ function solution(n: number): number {
   }
 
   return count;
+  
+
+  /** 
+  let count = 0;
+  for (let i = 1; i <= n; i++) {
+    if (n % i === 0 && i % 2 === 1) {
+      count++;
+    }
+  }
+  return count;
+  */
 }
 
-console.log(solution(15));
-console.log(solution(10));
+console.log(oddDivisorCount(15));
+console.log(oddDivisorCount(10));
