@@ -8,7 +8,7 @@
 // commands의 모든 원소에 대해 앞서 설명한 연산을 적용했을 때 나온 결과를 배열에 담아 return
 
 import _ from "lodash";
-function solution(array: number[], commands: number[][]): number[] {
+function commandsNumber(array: number[], commands: number[][]): number[] {
   const commandsArr = commands.map((numArr) => {
     const i = numArr[0];
     const j = numArr[1];
@@ -22,7 +22,7 @@ function solution(array: number[], commands: number[][]): number[] {
 }
 
 console.log(
-  solution(
+  commandsNumber(
     [1, 5, 2, 6, 3, 7, 4],
     [
       [2, 5, 3],
