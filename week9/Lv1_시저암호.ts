@@ -3,13 +3,35 @@
 // 예를 들어 "AB"는 1만큼 밀면 "BC"가 되고, 3만큼 밀면 "DE"가 됩니다. "z"는 1만큼 밀면 "a"가 됩니다.
 // 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문 return
 
+// 문자열 배열로 변환 후 map으로 돌기
+// n 만큼 민 아스키코드가 90이나 122 를 넘어갈 경우 a에서부터 시작하도록 하기
+
 function solution(s: string, n: number): string {
   return [...s]
-    .map((_, idx) => {
-      const ascii = s.charCodeAt(idx);
-      return String.fromCharCode(ascii + n);
+    .map((str) => {
+      const ascii = str.charCodeAt(0);
+      const changedAscii = ascii + n;
+
+      if (str === " ") return " ";
+
+      if (ascii >= 90 && ascii <= 90) {
+        if (changedAscii > 90) {
+          return String.fromCharCode(changedAscii - 26);
+        }
+      }
+
+      if (ascii >= 97 && ascii <= 122) {
+        if (changedAscii > 122) {
+          return String.fromCharCode(changedAscii - 26);
+        }
+      }
+
+      return String.fromCharCode(changedAscii);
     })
     .join("");
 }
 
 console.log(solution("AB", 1));
+console.log(solution("a B z", 4));
+console.log(solution("w z Y c", 6));
+console.log(solution("AaZz", 25));
