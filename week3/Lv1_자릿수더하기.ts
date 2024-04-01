@@ -3,7 +3,7 @@
 function addDigits(n: number): number {
   const stringN = String(n);
 
-  return [...stringN].reduce((arr, cur) => (arr += Number(cur)), 0);
+  return [...stringN].reduce((acc, cur) => acc + Number(cur), 0);
 }
 
 console.log(addDigits(3960));
