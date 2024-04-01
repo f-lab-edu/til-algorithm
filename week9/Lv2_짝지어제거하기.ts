@@ -9,10 +9,9 @@
 // 의 순서로 문자열을 모두 제거할 수 있으므로 1을 반환
 
 function removePair(s: string): number {
-  const regex = /([a-z])\1/;
+  /** 
+  const regex = /([a-z])\1/g;
 
-  //   console.log(regex.test(s));
-  //   console.log(s.replace(regex, ""));
   if (s.length === 0) {
     return 1;
   }
@@ -21,6 +20,18 @@ function removePair(s: string): number {
     return removePair(s);
   }
   return 0;
+  */
+
+  const newS = s.slice(1);
+  const sArr = [s[0]];
+  for (const char of newS) {
+    if (char === sArr.at(-1)) {
+      sArr.pop();
+    } else {
+      sArr.push(char);
+    }
+  }
+  return sArr.length === 0 ? 1 : 0;
 }
 
 console.log(removePair("baabaa"));
