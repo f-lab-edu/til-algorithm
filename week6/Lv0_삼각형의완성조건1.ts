@@ -5,9 +5,9 @@
 import _ from "lodash";
 
 function triangle(sides: number[]): number {
-  const sortArray = _.sortBy(sides);
+  const sortedSides = _.sortBy(sides);
 
-  return sortArray[2] < sortArray[0] + sortArray[1] ? 1 : 2;
+  return sortedSides[2] < sortedSides[0] + sortedSides[1] ? 1 : 2;
 }
 
 /** 
