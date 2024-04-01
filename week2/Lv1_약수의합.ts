@@ -14,15 +14,17 @@ import _ from "lodash";
 
 function divisorSum(n: number): number {
   const sqrtArray: number[] = [];
+  const sqrtNum = Math.sqrt(n);
 
-  for (let i = 0; i <= Math.sqrt(n); i++) {
+  for (let i = 1; i <= sqrtNum; i++) {
     if (n % i === 0) {
       sqrtArray.push(i);
-
-      if (n / i !== i) {
-        sqrtArray.push(n / i);
-      }
+      sqrtArray.push(n / i);
     }
+  }
+
+  if (Number.isInteger(sqrtNum)) {
+    sqrtArray.splice(sqrtArray.indexOf(sqrtNum), 1);
   }
 
   return _.sum(sqrtArray);
