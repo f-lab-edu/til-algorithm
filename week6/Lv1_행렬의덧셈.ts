@@ -9,9 +9,7 @@ function addRowColumn(arr1: number[][], arr2: number[][]): number[][] {
   // );
   //console.log(_.zip(arr1, arr2));
 
-  return _.zipWith(arr1, arr2, (elementArr1, elementArr2) =>
-    _.zipWith(elementArr1, elementArr2, (num1, num2) => num1 + num2)
-  );
+  return _.zipWith(arr1, arr2, (xs, ys) => _.zipWith(xs, ys, (x, y) => x + y));
 }
 
 console.log(
