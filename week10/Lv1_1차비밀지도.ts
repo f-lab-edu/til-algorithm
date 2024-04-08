@@ -6,23 +6,32 @@
 // "지도 1"과 "지도 2"는 각각 정수 배열로 암호화되어 있다.
 // 암호화된 배열은 지도의 각 가로줄에서 벽 부분을 1, 공백 부분을 0으로 부호화했을 때 얻어지는 이진수에 해당하는 값의 배열이다.
 
+/** 
 function secretMap(n: number, arr1: number[], arr2: number[]): string[] {
   const binaryArr1 = arr1.map((num) => num.toString(2).padStart(n, "0"));
   const binaryArr2 = arr2.map((num) => num.toString(2).padStart(n, "0"));
 
-  console.log(binaryArr1, binaryArr2);
-
   return binaryArr1.map((str, idx1) =>
     [...str]
       .map((num, idx2) => {
-        if (num === "0") {
-          if (binaryArr2[idx1][idx2] === "0") return " ";
+        if (num === "0" && binaryArr2[idx1][idx2] === "0") {
+          return " ";
         }
-        return '#'
+        return "#";
       })
       .join("")
   );
-  
+}
+*/
+
+function secretMap(n: number, arr1: number[], arr2: number[]): string[] {
+  return arr1.map((str, idx) =>
+    (str | arr2[idx])
+      .toString(2)
+      .padStart(n, "0")
+      .replace(/0/g, " ")
+      .replace(/1/g, "#")
+  );
 }
 
 console.log(secretMap(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]));
