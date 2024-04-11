@@ -7,7 +7,7 @@
 function shortOfMoney(price: number, money: number, count: number): number {
   const totalPrice = (count * (2 * price + (count - 1) * price)) / 2;
 
-  return money < totalPrice ? totalPrice - money : 0;
+  return Math.max(totalPrice - money, 0);
 }
 
 console.log(shortOfMoney(3, 20, 4));
