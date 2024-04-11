@@ -16,7 +16,7 @@ function divisorSum(n: number): number {
   const sqrtArray: number[] = [];
   const sqrtNum = Math.sqrt(n);
 
-  for (let i = 1; i <= sqrtNum; i++) {
+  for (let i = 1; i < sqrtNum; i++) {
     if (n % i === 0) {
       sqrtArray.push(i);
       sqrtArray.push(n / i);
@@ -24,7 +24,7 @@ function divisorSum(n: number): number {
   }
 
   if (Number.isInteger(sqrtNum)) {
-    sqrtArray.splice(sqrtArray.indexOf(sqrtNum), 1);
+    sqrtArray.push(sqrtNum);
   }
 
   return _.sum(sqrtArray);
