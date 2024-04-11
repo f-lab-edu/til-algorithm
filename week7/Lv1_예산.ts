@@ -11,8 +11,9 @@ function MaximumBudgetSupport(d: number[], budget: number): number {
   const sortD = _.sortBy(d);
 
   for (let i = 0; i < sortD.length; i++) {
-    if (budget - sortD[i] >= 0) {
-      budget = budget - sortD[i];
+    const remainingBudget = budget - sortD[i];
+    if (remainingBudget >= 0) {
+      budget = remainingBudget;
       count++;
     } else {
       break;
