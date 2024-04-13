@@ -19,6 +19,12 @@ function minimumBatteryUsage(n: number): number {
   }
 
   return count;
+
+  /**
+  const binaryN = n.toString(2);
+  
+  return binaryN.replace(/0/g, "").length;
+   */
 }
 
 console.log(minimumBatteryUsage(5));
