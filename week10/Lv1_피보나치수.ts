@@ -6,7 +6,7 @@
 // F(5) = F(3) + F(4) = 2 + 3 = 5
 // 2 이상의 n이 입력되었을 때, n번째 피보나치 수를 1234567으로 나눈 나머지를 return
 
-function divideFbonacci(n: number): number {
+function divideFibonacci(n: number): number {
   let fibonacciN = 1;
 
   if (n >= 3) {
@@ -30,10 +30,10 @@ function* fibonacci(n: number): Iterable<number> {
   }
 }
 
-console.log(divideFbonacci(3));
-console.log(divideFbonacci(5));
-console.log(divideFbonacci(8));
-console.log(divideFbonacci(1000));
-console.log(divideFbonacci(999));
-console.log(divideFbonacci(1001));
-console.log(divideFbonacci(1002));
+console.log(divideFibonacci(3));
+console.log(divideFibonacci(5));
+console.log(divideFibonacci(8));
+console.log(divideFibonacci(1000));
+console.log(divideFibonacci(999));
+console.log(divideFibonacci(1001));
+console.log(divideFibonacci(1002));
