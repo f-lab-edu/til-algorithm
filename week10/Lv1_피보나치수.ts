@@ -6,7 +6,19 @@
 // F(5) = F(3) + F(4) = 2 + 3 = 5
 // 2 이상의 n이 입력되었을 때, n번째 피보나치 수를 1234567으로 나눈 나머지를 return
 
-function fibonacci(n: number): number {
+function fibonacci1(n: number): number {
+  let fibonacciN = 1;
+
+  if (n >= 3) {
+    const fibonacciArray = [...fibonacci(n)];
+    fibonacciN = fibonacciArray[fibonacciArray.length - 1];
+    //console.log(fibonacci2);
+  }
+
+  return fibonacciN % 1234567;
+}
+
+function* fibonacci(n: number): Iterable<number> {
   let n1 = 1;
   let n2 = 1;
 
@@ -14,10 +26,16 @@ function fibonacci(n: number): number {
     const n3 = n1 + n2;
     n1 = n2;
     n2 = n3;
-  }
 
-  return n2 % 1234567;
+    //console.log(n2)
+    yield n2;
+  }
 }
 
-console.log(fibonacci(3));
-console.log(fibonacci(5));
+console.log(fibonacci1(3));
+console.log(fibonacci1(5));
+console.log(fibonacci1(8));
+console.log(fibonacci1(1000));
+console.log(fibonacci1(999));
+console.log(fibonacci1(1001));
+console.log(fibonacci1(1002));
