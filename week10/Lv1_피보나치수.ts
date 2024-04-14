@@ -15,7 +15,7 @@ function fibonacci1(n: number): number {
     //console.log(fibonacci2);
   }
 
-  return fibonacciN % 1234567;
+  return fibonacciN;
 }
 
 function* fibonacci(n: number): Iterable<number> {
@@ -24,8 +24,8 @@ function* fibonacci(n: number): Iterable<number> {
 
   for (let i = 3; i <= n; i++) {
     const n3 = n1 + n2;
-    n1 = n2;
-    n2 = n3;
+    n1 = n2 % 1234567;
+    n2 = n3 % 1234567;
 
     //console.log(n2)
     yield n2;
