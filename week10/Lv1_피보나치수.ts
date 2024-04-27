@@ -5,28 +5,26 @@
 // F(4) = F(2) + F(3) = 1 + 2 = 3
 // F(5) = F(3) + F(4) = 2 + 3 = 5
 // 2 이상의 n이 입력되었을 때, n번째 피보나치 수를 1234567으로 나눈 나머지를 return
-
 function divideFibonacci(n: number): number {
-  let fibonacciN = 1;
-
-  if (n >= 3) {
-    const fibonacciArray = [...fibonacci(n)];
-    fibonacciN = fibonacciArray[fibonacciArray.length - 1];
+  let count = 0;
+  for (const x of fibonacci()) {
+    if (count === n) {
+      return x;
+    }
+    count++;
   }
-
-  return fibonacciN;
 }
 
-function* fibonacci(n: number): Iterable<number> {
-  let n1 = 1;
+function* fibonacci(): Iterable<number> {
+  let n1 = 0;
   let n2 = 1;
+  yield n1;
 
-  for (let i = 3; i <= n; i++) {
-    const n3 = n1 + n2;
-    n1 = n2 % 1234567;
-    n2 = n3 % 1234567;
-
+  while (true) {
     yield n2;
+    const n3 = (n1 + n2) % 1234567;
+    n1 = n2;
+    n2 = n3;
   }
 }
 
