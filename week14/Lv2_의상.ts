@@ -14,7 +14,9 @@
 // 착용한 의상의 일부가 겹치더라도, 다른 의상이 겹치지 않거나, 혹은 의상을 추가로 더 착용한 경우에는 서로 다른 방법으로 옷을 착용한 것으로 계산합니다.
 // 코니는 하루에 최소 한 개의 의상은 입습니다.
 // 코니가 가진 의상들이 담긴 2차원 배열 clothes가 주어질 때 서로 다른 옷의 조합의 수를 return
-function solution(clothes: string[][]): number {
+
+/** 
+function combiningClothes(clothes: string[][]): number {
   const map = new Map();
   const valueCount = [];
   let count = 0;
@@ -58,9 +60,28 @@ function* combinationCount<T>(valueCount: T[]): Iterable<T[]> {
     yield [head, ...x];
   }
 }
+*/
+
+function combiningClothes(clothes: string[][]): number {
+  const map = new Map();
+  let count = 1;
+
+  for (const clothe of clothes) {
+    if (!map.has(clothe[1])) {
+      map.set(clothe[1], []);
+    }
+    map.get(clothe[1]).push(clothe[0]);
+  }
+
+  for (const x of map.values()) {
+    count *= x.length + 1;
+  }
+
+  return count - 1;
+}
 
 console.log(
-  solution([
+  combiningClothes([
     ["yellow_hat", "headgear"],
     ["blue_sunglasses", "eyewear"],
     ["green_turban", "headgear"],
@@ -68,7 +89,7 @@ console.log(
   ])
 );
 console.log(
-  solution([
+  combiningClothes([
     ["crow_mask", "face"],
     ["blue_sunglasses", "face"],
     ["smoky_makeup", "face"],
