@@ -7,12 +7,13 @@
 // 자연수 n이 매개변수로 주어질 때, n의 다음 큰 숫자를 return
 
 function bigNumber(n: number): number {
-  const countOne = n.toString(2).match(/1/g)?.length;
+  const countOne = (num: number) => {
+    return num.toString(2).match(/1/g)?.length;
+  };
   let bigNum = n + 1;
-  let countBigNum = bigNum.toString(2).match(/1/g)?.length;;
-  while (countOne !== countBigNum) {
+
+  while (countOne(n) !== countOne(bigNum)) {
     bigNum++;
-    countBigNum = bigNum.toString(2).match(/1/g)?.length;
   }
 
   return bigNum;
