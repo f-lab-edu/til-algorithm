@@ -6,7 +6,7 @@
 
 // 받는 병 수  = b * (n / a)
 // 남은 콜라 수 = 받는 병 수 + n - (n / a)
-function solution(a: number, b: number, n: number): number {
+function coke(a: number, b: number, n: number): number {
   let receivedCoke = 0;
 
   while (true) {
@@ -22,5 +22,5 @@ function solution(a: number, b: number, n: number): number {
   return receivedCoke;
 }
 
-console.log(solution(2, 1, 20));
-console.log(solution(3, 1, 20));
+console.log(coke(2, 1, 20));
+console.log(coke(3, 1, 20));
