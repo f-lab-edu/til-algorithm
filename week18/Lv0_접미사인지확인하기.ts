@@ -3,6 +3,6 @@
 // 예를 들어, "banana"의 모든 접미사는 "banana", "anana", "nana", "ana", "na", "a"입니다.
 // 문자열 my_string과 is_suffix가 주어질 때, is_suffix가 my_string의 접미사라면 1을, 아니면 0을 return
 
-function solution(my_string: string, is_suffix: string): number {
+function isSuffix(my_string: string, is_suffix: string): number {
   return my_string.endsWith(is_suffix) ? 1 : 0;
 }
