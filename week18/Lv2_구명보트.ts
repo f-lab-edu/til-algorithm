@@ -7,26 +7,24 @@
 // 사람들의 몸무게를 담은 배열 people과 구명보트의 무게 제한 limit가 매개변수로 주어질 때, 모든 사람을 구출하기 위해 필요한 구명보트 개수의 최솟값을 return
 
 // 최대 2명 타기 가능
-// 한명 탄 후 배열을 돌며 남는 무게중 가장 무거운 사람이 타기
-function solution(people: number[], limit: number): number {
+// 한명 탄 후 배열을 돌며 남는 무게 중 가장 무거운 사람이 타기
+function lifeboat(people: number[], limit: number): number {
   let count = 0;
 
   while (people.length > 0) {
     const passengerWeight = people.shift()!;
-
     const x = people.filter((weight) => weight <= limit - passengerWeight);
-    console.log(passengerWeight, x);
 
     if (x.length) {
       people.splice(people.indexOf(Math.max(...x), 1));
     }
-    console.log(people);
+
     count++;
   }
 
   return count;
 }
 
-console.log(solution([70, 50, 80, 50], 100));
-console.log(solution([70, 80, 50], 100));
-console.log(solution([70, 80, 20, 30], 100));
+console.log(lifeboat([70, 50, 80, 50], 100));
+console.log(lifeboat([70, 80, 50], 100));
+console.log(lifeboat([70, 80, 20, 30], 100));
