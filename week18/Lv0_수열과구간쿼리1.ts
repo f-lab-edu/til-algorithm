@@ -4,7 +4,7 @@
 // 각 query마다 순서대로 s ≤ i ≤ e인 모든 i에 대해 arr[i]에 1을 더합니다.
 // 위 규칙에 따라 queries를 처리한 이후의 arr를 return
 
-function solution(arr: number[], queries: number[][]): number[] {
+function sectionQueries(arr: number[], queries: number[][]): number[] {
   for (const [s, e] of queries) {
     for (let i = 0; i < arr.length; i++) {
       if (i >= s && i <= e) {
@@ -15,7 +15,7 @@ function solution(arr: number[], queries: number[][]): number[] {
 }
 
 console.log(
-  solution(
+  sectionQueries(
     [0, 1, 2, 3, 4],
     [
       [0, 1],
