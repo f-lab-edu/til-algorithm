@@ -9,9 +9,7 @@
 
 import _ from "lodash";
 function commandsNumber(array: number[], commands: number[][]): number[] {
-  const commandsArr = commands.map((numArr) => {
-    const [i, j, k] = numArr;
-
+  const commandsArr = commands.map(([i, j, k]) => {
     const commandArr = _.sortBy(array.slice(i - 1, j));
     return commandArr[k - 1];
   });
