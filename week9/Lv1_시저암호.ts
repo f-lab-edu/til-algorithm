@@ -7,6 +7,10 @@
 // n 만큼 민 아스키코드가 90이나 122 를 넘어갈 경우 a에서부터 시작하도록 하기
 
 function solution(s: string, n: number): string {
+  const ASCII_UPPER_CASE_Z = 90;
+  const ASCII_LOWER_CASE_Z = 122;
+  const ASCII_LOWER_CASE_A = 97;
+
   return [...s]
     .map((str) => {
       const ascii = str.charCodeAt(0);
@@ -14,14 +18,14 @@ function solution(s: string, n: number): string {
 
       if (str === " ") return " ";
 
-      if (ascii >= 90 && ascii <= 90) {
-        if (changedAscii > 90) {
+      if (ascii >= ASCII_UPPER_CASE_Z && ascii <= ASCII_UPPER_CASE_Z) {
+        if (changedAscii > ASCII_UPPER_CASE_Z) {
           return String.fromCharCode(changedAscii - 26);
         }
       }
 
-      if (ascii >= 97 && ascii <= 122) {
-        if (changedAscii > 122) {
+      if (ascii >= ASCII_LOWER_CASE_A && ascii <= ASCII_LOWER_CASE_Z) {
+        if (changedAscii > ASCII_LOWER_CASE_Z) {
           return String.fromCharCode(changedAscii - 26);
         }
       }
