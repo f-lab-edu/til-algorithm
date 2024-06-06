@@ -3,11 +3,11 @@
 
 function convertUpperCaseAndLowerCase(my_string: string): string {
   return [...my_string]
-    .map((str) =>
-      str.toLocaleLowerCase() === str
-        ? str.toLocaleUpperCase()
-        : str.toLocaleLowerCase()
-    )
+    .map((str) => {
+      const lowerCase = str.toLowerCase();
+
+      return str === lowerCase ? str.toUpperCase() : lowerCase;
+    })
     .join("");
 }
 
