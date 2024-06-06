@@ -4,13 +4,16 @@
 // rsp에 저장된 가위 바위 보를 모두 이기는 경우를 순서대로 나타낸 문자열을 return
 
 function winnerRsp(rsp: string): string {
-  return [...rsp]
-    .map((str) => {
-      if (str === "2") return 0;
-      if (str === "0") return 5;
-      if (str === "5") return 2;
-    })
-    .join("");
+  type xType = {
+    [key: string]: number
+  }
+  const x: xType = {
+    "2": 0,
+    "0": 5,
+    "5": 2,
+  };
+
+  return [...rsp].map((str) => x[str]).join("");
 }
 
 console.log(winnerRsp("205"));
