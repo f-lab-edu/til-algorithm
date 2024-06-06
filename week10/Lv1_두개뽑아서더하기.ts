@@ -6,33 +6,32 @@
 // 오름차순 정렬
 import _ from "lodash";
 function addPickNumber(numbers: number[]): number[] {
-  const list: number[] = [];
-  for (const a of combination(numbers, 3)) {
-    const sum = _.sum(a);
-    if (list.every((num) => num !== sum)) {
-      list.push(sum);
-    }
+  const sumNumber = [];
+  for (const x of combination(numbers, 2)) {
+    sumNumber.push(_.sum(x));
   }
-  return _.sortBy(list);
+
+  return _.sortBy(_.uniq(sumNumber));
 }
 
-function* combination(numbers: number[], pick: number): number[][] {
-  if (pick === 1) {
-    for (const i of numbers) {
-      yield [i];
-    }
+function* combination(numbers: number[], pick: number): Iterable<number[]> {
+  if (pick === 0) {
+    return yield [];
+  }
+
+  if (numbers.length === 0) {
     return;
   }
 
-  for (let i = 0; i <= numbers.length - pick; i++) {
-    //console.log(i);
-    for (const c of combination(numbers.slice(i + 1), pick - 1)) {
-      //console.log(numbers[i], c);
-      yield [numbers[i], ...c];
-    }
+  const [head, ...tail] = numbers;
+
+  yield* combination(tail, pick);
+
+  for (const x of combination(tail, pick - 1)) {
+    yield [head, ...x];
   }
 }
 
 console.log(addPickNumber([2, 1, 3, 4, 1]));
-//console.log(addPickNumber([1, 2, 3, 4, 5]));
-//console.log(addPickNumber([5, 0, 2, 7]));
+console.log(addPickNumber([1, 2, 3, 4, 5]));
+console.log(addPickNumber([5, 0, 2, 7]));
