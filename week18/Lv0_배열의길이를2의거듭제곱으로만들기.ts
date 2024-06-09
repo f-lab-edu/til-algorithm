@@ -5,20 +5,13 @@
 
 function solution(arr: number[]): number[] {
   let powerLength = [];
-  let prevX = 1;
 
   for (const x of power()) {
     if (arr.length <= x) {
-      const minX = Math.min(
-        Math.abs(arr.length - x),
-        Math.abs(arr.length - prevX)
-      );
-
-      powerLength = Array(minX).fill(0);
+      powerLength = Array(x - arr.length).fill(0);
 
       break;
     }
-    prevX = x;
   }
 
   return arr.concat(powerLength);
@@ -33,5 +26,5 @@ function* power() {
   }
 }
 
-console.log(solution([1, 2, 3, 4, 5, 6, 7, 8]));
+console.log(solution([1, 2, 3, 4, 5, 6]));
 console.log(solution([1]));
