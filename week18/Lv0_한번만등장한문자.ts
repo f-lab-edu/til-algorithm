@@ -4,7 +4,7 @@
 // 한 번만 등장하는 문자가 없을 경우 빈 문자열을 return
 
 //
-function solution(s: string): string {
+function stringWithOnlyOne(s: string): string {
   return [...s]
     .filter((str) => {
       const x = [...s];
@@ -16,4 +16,4 @@ function solution(s: string): string {
     .join("");
 }
 
-console.log(solution("abcabcadc"));
+console.log(stringWithOnlyOne("abcabcadc"));
