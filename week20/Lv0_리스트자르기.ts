@@ -8,7 +8,7 @@
 // n = 4 : num_list의 a번 인덱스부터 b번 인덱스까지 c 간격으로
 // 올바르게 슬라이싱한 리스트를 return
 
-function solution(
+function listSlicing(
   n: number,
   [a, b, c]: number[],
   num_list: number[]
@@ -28,4 +28,4 @@ function solution(
   }
 }
 
-console.log(solution(4, [1, 5, 2], [1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(listSlicing(4, [1, 5, 2], [1, 2, 3, 4, 5, 6, 7, 8, 9]));

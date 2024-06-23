@@ -8,7 +8,7 @@
 // 배열 원소 중 k의 배수인 수만 필터링
 // 그 수의 인덱스 값을 구하여 arr의 자리에 + 1
 import _ from "lodash";
-function solution(arr: number[], queries: number[][]): number[] {
+function queries4(arr: number[], queries: number[][]): number[] {
   for (const [s, e, k] of queries) {
     const x = _.range(s, e + 1);
     const y = x.filter((num) => num % k === 0).map((num) => x.indexOf(num))
@@ -22,7 +22,7 @@ function solution(arr: number[], queries: number[][]): number[] {
 }
 
 console.log(
-  solution(
+  queries4(
     [0, 1, 2, 4, 3],
     [
       [0, 4, 1],
@@ -33,7 +33,7 @@ console.log(
 );
 
 console.log(
-  solution(
+  queries4(
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [
       [3, 9, 4],
@@ -43,7 +43,7 @@ console.log(
 );
 
 console.log(
-  solution(
+  queries4(
     [0, 1, 2, 4, 3],
     [
       [1, 4, 1],

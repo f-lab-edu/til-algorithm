@@ -6,7 +6,7 @@
 // 각 직원이 적은 메뉴가 문자열 배열 order로 주어질 때, 카페에서 결제하게 될 금액을 return
 
 import _ from "lodash";
-function solution(orders: string[]): number {
+function orderCoffee(orders: string[]): number {
   const coffeePrices = orders.map((order) => {
     if (order.includes("americano") || order.includes("anything")) {
       return 4500;
@@ -20,5 +20,5 @@ function solution(orders: string[]): number {
 }
 
 console.log(
-  solution(["cafelatte", "americanoice", "hotcafelatte", "anything"])
+  orderCoffee(["cafelatte", "americanoice", "hotcafelatte", "anything"])
 );
