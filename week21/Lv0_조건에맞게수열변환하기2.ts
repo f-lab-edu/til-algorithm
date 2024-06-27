@@ -20,12 +20,10 @@ function ConvertingAnArray2(arr: number[]): number {
   };
 
   while (true) {
-    // arr이 조건에 맞는지 확인, 맞으면 while문 종료 아니면 arr 작업
     if (x.every((num) => !(isEvenNumOver50(num) || isOddNumUnder50(num)))) {
       break;
     }
 
-    // arr 작업
     x = x.map((num) => {
       if (isEvenNumOver50(num)) {
         return num / 2;
