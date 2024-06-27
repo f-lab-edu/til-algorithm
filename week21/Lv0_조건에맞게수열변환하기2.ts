@@ -9,7 +9,7 @@
 // 50이상 && 홀수 => 그대로, 50미만 && 짝수 => 그대로
 // 배열의 원소가 50이상 && 홀수이거나 50미만 && 짝수로만 되어있을 때 arr(x) = arr(x + 1) 됨
 // while문으로 위 조건에 맞을 때까지 작업 반복
-function solution(arr: number[]): number {
+function ConvertingAnArray2(arr: number[]): number {
   let count = 0;
   let x = [...arr];
   const isEvenNumOver50 = (num: number): boolean => {
@@ -42,4 +42,4 @@ function solution(arr: number[]): number {
   return count;
 }
 
-console.log(solution([1, 2, 54, 53]));
+console.log(ConvertingAnArray2([1, 2, 54, 53]));

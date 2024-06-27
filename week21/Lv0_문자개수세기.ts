@@ -7,8 +7,9 @@
 // 알파벳 배열 생성
 // my_string을 돌며
 import _ from "lodash";
-function solution(my_string: string): number[] {
-  const xs = _.range(65, 91).concat(_.range(97, 123));
+function countingAlphabets(my_string: string): number[] {
+  const [ASCII_A, ASCII_Z, ASCII_a, ASCII_z] = [65, 91, 97, 123];
+  const xs = _.range(ASCII_A, ASCII_Z).concat(_.range(ASCII_a, ASCII_z));
   const map = new Map();
 
   for (const x of xs) {
@@ -22,4 +23,4 @@ function solution(my_string: string): number[] {
   return [...map.values()];
 }
 
-console.log(solution("Programmers"));
+console.log(countingAlphabets("Programmers"));
