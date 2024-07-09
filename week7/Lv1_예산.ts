@@ -7,13 +7,13 @@
 
 import _ from "lodash";
 function MaximumBudgetSupport(d: number[], budget: number): number {
+  const sortedD = _.sortBy(d);
+  let remainingBudget = budget;
   let count = 0;
-  const sortD = _.sortBy(d);
 
-  for (let i = 0; i < sortD.length; i++) {
-    const remainingBudget = budget - sortD[i];
+  for (let i = 0; i < sortedD.length; i++) {
+    remainingBudget -= sortedD[i];
     if (remainingBudget >= 0) {
-      budget = remainingBudget;
       count++;
     } else {
       break;
