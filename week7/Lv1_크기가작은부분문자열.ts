@@ -7,8 +7,8 @@ function smallStr(t: string, p: string): number {
   let count = 0;
   const numP = Number(p)
   for (let i = 0; i <= t.length - p.length; i++) {
-    const sliceStr = t.slice(i, i + p.length);
-    if (Number(sliceStr) <= numP) {
+    const sliceStrToNum = Number(t.slice(i, i + p.length));
+    if (sliceStrToNum <= numP) {
       count++;
     }
   }
