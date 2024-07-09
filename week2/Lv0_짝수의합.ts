@@ -14,9 +14,9 @@
 import _ from "lodash";
 
 function evenSum(n: number): number {
-  const evenArray = _.range(2, n, 2);
+  const evens = _.range(2, n, 2);
 
-  return _.sum(evenArray);
+  return _.sum(evens);
 }
 
 console.log(evenSum(20));
