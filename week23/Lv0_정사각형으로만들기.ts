@@ -8,7 +8,6 @@
 // 행의 수 < 열의 수 => 각 열의 끝에 0 추가
 // 행의 수 = 열의 수 => 변화 없음
 
-// 행, 열 => row, column
 function solution(arr: number[][]): number[][] {
   const rowCount = arr.length;
   const columnCount = arr[0].length;
