@@ -6,13 +6,20 @@
 
 // spell를 모두 사용한 단어가 dic에 존재하는지 확인
 
-function solution(spell: string[], dic: string[]): number {
+function alienLanguageDictionary(spell: string[], dic: string[]): number {
   return dic.some((word) => spell.every((str) => word.includes(str))) ? 1 : 2;
 }
 
 // 존재할 때
-console.log(solution(["z", "d", "x"], ["def", "dww", "dzx", "loveaw"]));
-console.log(solution(["q", "e", "n", "p"], ["enqpo", "loveaw"]));
+console.log(
+  alienLanguageDictionary(["z", "d", "x"], ["def", "dww", "dzx", "loveaw"])
+);
+console.log(alienLanguageDictionary(["q", "e", "n", "p"], ["enqpo", "loveaw"]));
 
 // 아닐 때
-console.log(solution(["p", "o", "s"], ["sod", "eocd", "qpixm", "adio", "soo"]));
+console.log(
+  alienLanguageDictionary(
+    ["p", "o", "s"],
+    ["sod", "eocd", "qpixm", "adio", "soo"]
+  )
+);

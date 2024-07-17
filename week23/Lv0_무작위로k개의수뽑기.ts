@@ -11,7 +11,7 @@
 // 서로 다른 수를 저장한 배열의 길이가 k
 // 서로 다른 수가 k개보다 적으면 나머지 값을 전부 -1로 채우기
 
-function solution(arr: number[], k: number): number[] {
+function randomDraw(arr: number[], k: number): number[] {
   const xs = [...new Set(arr)];
 
   if (xs.length > k) {
@@ -26,8 +26,8 @@ function solution(arr: number[], k: number): number[] {
 }
 
 // 서로 다른 수가 k개보다 적을때
-console.log(solution([1, 2, 2, 1, 2, 1], 3));
+console.log(randomDraw([1, 2, 2, 1, 2, 1], 3));
 // k개일 때
-console.log(solution([1, 1, 2, 2, 4, 2, 1], 3));
+console.log(randomDraw([1, 1, 2, 2, 4, 2, 1], 3));
 // k개보다 많을 떄
-console.log(solution([1, 1, 2, 2, 4, 4, 5, 3, 3, 7, 7], 3));
+console.log(randomDraw([1, 1, 2, 2, 4, 4, 5, 3, 3, 7, 7], 3));

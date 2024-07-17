@@ -8,7 +8,7 @@
 // 행의 수 < 열의 수 => 각 열의 끝에 0 추가
 // 행의 수 = 열의 수 => 변화 없음
 
-function solution(arr: number[][]): number[][] {
+function makeSquare(arr: number[][]): number[][] {
   const rowCount = arr.length;
   const columnCount = arr[0].length;
 
@@ -28,7 +28,7 @@ function solution(arr: number[][]): number[][] {
 
 // 행의 수 > 열의 수
 console.log(
-  solution([
+  makeSquare([
     [572, 22, 37],
     [287, 726, 384],
     [85, 137, 292],
@@ -38,7 +38,7 @@ console.log(
 
 // 행의 수 < 열의 수
 console.log(
-  solution([
+  makeSquare([
     [572, 22, 37, 43, 32],
     [287, 726, 384, 12, 22],
     [85, 137, 292, 234, 54],
@@ -47,7 +47,7 @@ console.log(
 
 // 행의 수 = 열의 수
 console.log(
-  solution([
+  makeSquare([
     [572, 22],
     [287, 726],
   ])

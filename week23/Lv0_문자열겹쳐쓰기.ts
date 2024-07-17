@@ -5,22 +5,22 @@
 
 // my_string의 인덱스 s부터 overwrite_string로 바꾸기
 
-function solution(
-  my_string: string,
-  overwrite_string: string,
+function overwrite(
+  myString: string,
+  overwriteString: string,
   s: number
 ): string {
-  const xs = [...my_string];
-  xs.splice(s, overwrite_string.length, overwrite_string);
+  const xs = [...myString];
+  xs.splice(s, overwriteString.length, overwriteString);
 
   return xs.join("");
 
   //   return (
-  //     my_string.substring(0, s) +
-  //     overwrite_string +
-  //     my_string.substring(s + overwrite_string.length)
+  //     myString.substring(0, s) +
+  //     overwriteString +
+  //     myString.substring(s + overwriteString.length)
   //   );
 }
 
-console.log(solution("He11oWor1d", "lloWorl", 2));
-console.log(solution("Program29b8UYP", "merS123", 7));
+console.log(overwrite("He11oWor1d", "lloWorl", 2));
+console.log(overwrite("Program29b8UYP", "merS123", 7));

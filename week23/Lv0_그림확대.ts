@@ -6,7 +6,7 @@
 
 // 각 원소와 원소안의 문자열들이 k배씩 늘어나야 함.
 
-function solution(picture: string[], k: number): string[] {
+function increasePixels(picture: string[], k: number): string[] {
   return picture.reduce((xs: string[], pixel: string) => {
     xs.push(...Array(k).fill([...pixel].map((str) => str.repeat(k)).join("")));
     return xs;
@@ -14,7 +14,7 @@ function solution(picture: string[], k: number): string[] {
 }
 
 console.log(
-  solution(
+  increasePixels(
     [
       ".xx...xx.",
       "x..x.x..x",
